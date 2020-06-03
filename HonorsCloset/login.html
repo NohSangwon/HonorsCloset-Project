@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>금오공과대학교 명예옷장</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
+    <meta name="keywords"
+        content="free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+    <meta name="author" content="FreeHTML5.co" />
+
+    <!-- 
+	//////////////////////////////////////////////////////
+
+	FREE HTML5 TEMPLATE 
+	DESIGNED & DEVELOPED by FreeHTML5.co
+		
+	Website: 		http://freehtml5.co/
+	Email: 			info@freehtml5.co
+	Twitter: 		http://twitter.com/fh5co
+	Facebook: 		https://www.facebook.com/fh5co
+
+	//////////////////////////////////////////////////////
+	 -->
+
+    <!-- Facebook and Twitter integration -->
+    <meta property="og:title" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:description" content="" />
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:url" content="" />
+    <meta name="twitter:card" content="" />
+
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic,700' rel='stylesheet'
+        type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="css/CLIENT_css/animate.css">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="css/CLIENT_css/icomoon.css">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="css/CLIENT_css/bootstrap.css">
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="css/CLIENT_css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/CLIENT_css/owl.theme.default.min.css">
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="css/CLIENT_css/style.css">
+
+    <link rel="stylesheet" href="css/CLIENT_css/modal.css">
+    <link rel="stylesheet" href="css/CLIENT_css/login.css">
+    <!-- Modernizr JS -->
+    <script src="js/CLIENT_js/modernizr-2.6.2.min.js"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+
+    <script src="./admin/js/ADMIN_js/includeHTML.js"></script>
+    <script>
+        var enterkey = function () {
+            if (window.event.keyCode == 13) {
+                // 엔터키가 눌렸을 때 실행할 내용
+                submitLogin();
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <div id="includeHTML" include-html="topNavibar.html"></div>
+
+    <div id="includeHTML" include-html="aside.html"></div>
+
+    <div id="fh5co-page">
+        <div class="fh5co-narrow-content">
+            <div class="row animate-box" data-animate-effect="fadeInLeft">
+                <div class="container" id="container">
+                    <div class="form-container sign-in-container">
+                        <form id="my_form">
+                            <h3>Login</h3><br><br>
+                            <input type="id" placeholder="ID" maxlength="50" id='id' />
+                            <input type="password" placeholder="Password" id='password' maxlength="20"
+                                onkeyup="javascript:enterkey(this);" />
+                            <div style="width: 400px"><a id="login_a" href="#" style="margin-right: 10%">아이디/비밀번호
+                                    찾기</a>
+                                <a id="login_a" href="#" style="margin-right: 5%" name="sign">회원가입</a>
+                            </div><br>
+                            <button id="loginbtn" type="button">LOGIN</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- jQuery -->
+    <script src="js/CLIENT_js/jquery.min.js"></script>
+    <!-- jQuery Easing -->
+    <script src="js/CLIENT_js/jquery.easing.1.3.js"></script>
+
+    <script>
+        includeHTML();
+
+    </script>
+
+    <!-- Bootstrap -->
+    <script src="js/CLIENT_js/bootstrap.min.js"></script>
+    <!-- Carousel -->
+    <script src="js/CLIENT_js/owl.carousel.min.js"></script>
+    <!-- Stellar -->
+    <script src="js/CLIENT_js/jquery.stellar.min.js"></script>
+    <!-- Waypoints -->
+    <script src="js/CLIENT_js/jquery.waypoints.min.js"></script>
+    <!-- Counters -->
+    <script src="js/CLIENT_js/jquery.countTo.js"></script>
+
+
+    <!-- MAIN JS -->
+    <script src="js/CLIENT_js/main.js"></script>
+
+    <script>
+        var login_a = document.getElementById('login_a');
+        login_a.addEventListener('click', function () {
+		window.location.href = "ID&PWD.html";
+        })
+
+        var login_aa = document.getElementsByName('sign');
+        login_aa[0].addEventListener('click', function () {
+		window.location.href = "sign.html";
+        })
+
+        var submitLogin = function () {
+            $.ajax({
+                type: "POST",
+                url: '/Login/DoLogin',
+                data: {
+                    id: document.getElementById('id').value,
+                    pwd: document.getElementById('password').value
+                },
+                success: function (data) {
+                    if (data == 'err1') {
+                        alert("아이디 및 비밀번호를 다시 확인해주세요!");
+                    } 
+                    else if (data == 'err3'){
+                        alert('탈퇴된 회원입니다.');
+                    }
+                    else if (data == 'err2') {
+                        alert("아직 인증되지 않은 아이디입니다!");
+                    }
+                    else {
+                        window.location.href = "../";
+                    }
+                },
+                error: function (e) {
+                    alert(e.responseText);
+                }
+            });
+        };
+        document.querySelector('#loginbtn').addEventListener('click', submitLogin);
+    </script>
+</body>
+
+</html>

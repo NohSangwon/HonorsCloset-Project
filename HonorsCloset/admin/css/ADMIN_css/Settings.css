@@ -1,0 +1,30 @@
+#logoImgView,
+#currlogoImgView,
+#mainCutImgView,
+#currMaincutImgView,
+#mainCut2ImgView,
+#currMaincut2ImgView,
+#mobileMainCutImgView,
+#currMainCutMImgView, 
+#mobileMainCut2ImgView,
+#currMainCut2MImgView {
+    border: 4px dashed #bcbcbc;
+}
+
+#logoImg,
+#mainCutImg,
+#mobileMainCutImg {
+    background: #bcbcbc;
+}
+
+#OverlayContentWrapper {
+    width: auto;
+    height: auto;
+}
+
+#insertFontSubmitBtn,
+#updateLogoSubmitBtn,
+#updateMainCutSubmitBtn,
+#updateMobileMainCutSubmitBtn {
+    margin-right: 1rem;
+}

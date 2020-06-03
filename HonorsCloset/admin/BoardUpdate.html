@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+    #contentForm {
+        width: 100%;
+        padding: 2rem;
+    }
+
+    .table>thead>tr>th{
+        padding : 1rem;
+    }
+
+    .table>thead>tr>th,
+    .table>tbody>tr>th {
+        background-color: #79a3cf;
+        margin: 0 auto;
+        text-align: center;
+    }
+</style>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>명예옷장 관리자 페이지</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/ADMIN_vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Page level plugin CSS-->
+    <link href="vendor/ADMIN_vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/ADMIN_css/sb-admin.css" rel="stylesheet">
+
+    <script src="vendor/ADMIN_vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/ADMIN_vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/ADMIN_js/checkIsManager.js"></script>
+    <script src="js/ADMIN_js/includeHTML.js"></script>
+</head>
+
+<body id="page-top" class="sidebar-toggled">
+    <div style="margin-top: 55px"></div>
+    <!-- Navbar -->
+    <div id="includeHTML" include-html="navbar.html"></div>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="includeHTML" include-html="sidebar.html"></div>
+
+        <div id="content-wrapper">
+
+            <div class="container-fluid">
+                <div id="contentForm">
+                    <table class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th width="30%">글쓴이</th>
+                                <td width="70%" id="Writer">명예옷장 관리자</td>
+                            </tr>
+                            <tr>
+                                <th>제목</th>
+                                <td><input class="form-control" type="text" id="Title"
+                                        style="width:70%; display:inline-block; padding:0;"></td>
+                            </tr>
+                            <tr>
+                                <th>분류</th>
+                                <td>
+                                    <select class="selectpicker" id='Specification'>
+                                        <option value='#' selected>게시판 선택 &nbsp&nbsp&nbsp&nbsp&nbsp</option>
+                                        <option value='0'>공지사항</option>
+                                        <option value='1'>FAQ</option>
+                                    </select>
+                                    &nbsp&nbsp&nbsp&nbsp 공지 &nbsp<input type="checkbox" name="isNotice"
+                                        style="width:15px;height:15px;">
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="2">
+                                    <textarea id="Tinymce" name="Tinymce"></textarea>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div style="float:right">
+                    <button type="button" class="btn btn-primary" id="OK_Button">수정</button>
+                    <button type="button" class="btn btn-primary" id="BACK_Button">뒤로</button>
+                </div>
+            </div>
+
+            <!-- Sticky Footer -->
+            <div id="includeHTML" include-html="footer.html"></div>
+
+        </div>
+    </div>
+    <!-- /.content-wrapper -->
+    <!-- /#wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div id="includeHTML" include-html="logoutModal.html"></div>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/ADMIN_vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Page level plugin JavaScript-->
+    <script src="vendor/ADMIN_vendor/datatables/jquery.dataTables.js"></script>
+    <script src="vendor/ADMIN_vendor/datatables/dataTables.bootstrap4.js"></script>
+
+    <script>includeHTML();</script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/ADMIN_js/sb-admin.min.js"></script>
+
+    <!-- Demo scripts for this page-->
+    <script src="js/ADMIN_js/demo/datatables-demo.js"></script>
+
+    <!-- Load Tinymce (Editor) -->
+    <script src="tinymce/js/tinymce/tinymce.min.js"></script>
+    <!-- Load WriteForm.js-->
+    <script src="js/ADMIN_js/BoardUpdate.js"></script>
+
+</body>
+
+<script>
+    tinymce.init({
+        selector: '#Tinymce',
+        language: 'ko_KR'
+    });    
+</script>
+
+</html>

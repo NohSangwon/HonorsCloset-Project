@@ -1,0 +1,60 @@
+/* CUSTOM STYLE */
+.wrap {
+    width: 80%;
+    margin: 50px auto;
+}
+
+/* 검색창, 페이지당 select 등 input 관련 */
+.dataTables_wrapper .dataTables_filter input,
+select[name=myTable_length] {
+    padding: 0.5em;
+}
+
+#select {
+    padding: 0.5em;
+    margin-right: 0.5em;
+}
+
+/* page button */
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    background: linear-gradient(to bottom, #F8E0E6 0%, #F6CED8 100%);
+    color: black !important;
+    font-weight: bold;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    background: linear-gradient(to bottom, #F7819F 0%, red 100%);
+    color: white !important;
+    font-weight: bold;
+}
+
+table.dataTable tbody tr {
+    transition-duration: .28s;
+    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+    transition-property: background-color;
+}
+
+table.dataTable.display tbody tr.odd>.sorting_1,
+table.dataTable.order-column.stripe tbody tr.odd>.sorting_1,
+table.dataTable.display tbody tr.even>.sorting_1,
+table.dataTable.order-column.stripe tbody tr.even>.sorting_1,
+table.dataTable.hover tbody tr:hover,
+table.dataTable.display tbody tr:hover {
+    background: #FBEFF2;
+}
+
+
+@media screen and (max-width: 640px) {
+
+    /* 검색창, 페이지당 select 등 input 관련 */
+    .dataTables_wrapper .dataTables_filter input,
+    select[name=myTable_length] {
+        padding: 0.2em;
+        width: 40%;
+    }
+
+    #select {
+        padding: 0.2em;
+        margin-right: 0.5em;
+    }
+}

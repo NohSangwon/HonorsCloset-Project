@@ -1,0 +1,155 @@
+body {
+    background: no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -0-background-size: cover;
+    background-size: cover;
+}
+
+@media only screen and (max-height: 568px) and (max-width: 450px) {
+    body {
+        background: no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -0-background-size: cover;
+        width: auto;
+        min-height: 568px;
+        overflow: hidden;
+    }
+}
+
+@media only screen and (min-height: 568px) and (max-height: 640px) and (max-width: 450px) {
+    body {
+        background: no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -0-background-size: cover;
+        width: auto;
+        min-height: 640px;
+        overflow: hidden;
+    }
+}
+
+@media only screen and (min-height: 640px) and (max-height: 736px) and (max-width: 450px) {
+    body {
+        background: no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -0-background-size: cover;
+        width: auto;
+        min-height: 736px;
+        overflow: hidden;
+    }
+}
+
+@media only screen and (min-height: 736px) and (max-height: 823px) and (max-width: 450px) {
+    body {
+        background: no-repeat center center fixed;
+
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -0-background-size: cover;
+        width: auto;
+        min-height: 823px;
+        overflow: hidden;
+    }
+}
+
+@media only screen and (min-height: 823px) and (max-height: 1024px) and (max-width: 768px) {
+    body {
+        background: no-repeat center center fixed;
+
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -0-background-size: cover;
+        width: auto;
+        min-height: 1024px;
+        overflow: hidden;
+    }
+}
+
+@media only screen and (min-height: 1024) and (max-height: 1366px) and (max-width: 1024px) {
+    body {
+        background: no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -0-background-size: cover;
+        width: auto;
+        min-height: 1366px;
+        overflow: hidden;
+    }
+}
+
+
+
+@media only screen and (max-height: 450px) and (max-width: 568px) {
+    body {
+        background: no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -0-background-size: cover;
+        max-height: 450px;
+        min-width: 568px;
+        overflow: hidden;
+    }
+}
+
+@media only screen and (min-width: 568px) and (max-width: 640px) and (max-height: 450px) {
+    body {
+        background: no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -0-background-size: cover;
+        max-height: 450px;
+        min-width: 640px;
+        overflow: hidden;
+    }
+}
+
+@media only screen and (min-width: 640px) and (max-width: 736px) and (max-height: 450px) {
+    body {
+        background: no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -0-background-size: cover;
+        max-height: 450px;
+        min-width: 736px;
+        overflow: hidden;
+    }
+}
+
+@media only screen and (min-width: 736px) and (max-width: 823px) and (max-height: 450px) {
+    body {
+        background: no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -0-background-size: cover;
+        max-height: 450px;
+        min-width: 823px;
+        overflow: hidden;
+    }
+}
+
+@media only screen and (min-width: 823px) and (max-width: 1024px) and (max-height: 768px) {
+    body {
+        background: no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -0-background-size: cover;
+        min-height: 823px;
+        min-width: 1024px;
+        overflow: hidden;
+    }
+}
+
+@media only screen and (min-width: 1024) and (max-width: 1366px) and (max-height: 1024px) {
+    body {
+        background: no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -0-background-size: cover;
+        min-height: 1024px;
+        min-width: 1366px;
+        overflow: hidden;
+    }
+}

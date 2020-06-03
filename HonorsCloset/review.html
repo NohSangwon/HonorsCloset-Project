@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>금오공과대학교 명예옷장</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
+    <meta name="keywords" content="free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+    <meta name="author" content="FreeHTML5.co" />
+
+    <!-- 
+	//////////////////////////////////////////////////////
+
+	FREE HTML5 TEMPLATE 
+	DESIGNED & DEVELOPED by FreeHTML5.co
+		
+	Website: 		http://freehtml5.co/
+	Email: 			info@freehtml5.co
+	Twitter: 		http://twitter.com/fh5co
+	Facebook: 		https://www.facebook.com/fh5co
+
+	//////////////////////////////////////////////////////
+	 -->
+
+    <!-- Facebook and Twitter integration -->
+    <meta property="og:title" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:description" content="" />
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:url" content="" />
+    <meta name="twitter:card" content="" />
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="css/CLIENT_css/animate.css">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="css/CLIENT_css/icomoon.css">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="css/CLIENT_css/bootstrap.css">
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="css/CLIENT_css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/CLIENT_css/owl.theme.default.min.css">
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="css/CLIENT_css/style.css">
+    <link rel="stylesheet" type="text/css" href="vendor/ClIENT_vendor/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor/ClIENT_vendor/css/responsive.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="css/CLIENT_css/board.css">
+    <!-- Modernizr JS -->
+    <script src="js/CLIENT_js/modernizr-2.6.2.min.js"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+    <script src="js/CLIENT_js/jquery.min.js"></script>
+    <script src="vendor/CLIENT_vendor/js/jquery.dataTables.js"></script>
+    <script src="vendor/CLIENT_vendor/js/dataTables.responsive.min.js"></script>
+    <script src="vendor/CLIENT_vendor/js/dataTables.buttons.min.js"></script>
+    <script src="vendor/CLIENT_vendor/js/buttons.html5.min.js"></script>
+
+    <script src="./admin/js/ADMIN_js/includeHTML.js"></script>
+</head>
+
+<body>
+    <div id="includeHTML" include-html="topNavibar.html"></div>
+
+    <div id="includeHTML" include-html="aside.html"></div>
+
+    <div id="fh5co-page">
+        <div class="fh5co-narrow-content">
+
+            <div class="animate-box" data-animate-effect="fadeInLeft">
+
+                <div class="container-fluid">
+                    <h1 style="font-size: 50px">Review</h1>
+
+                    <!-- DataTables Example -->
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-primary text-center" id="ReviewNoticeTable" width="100%" cellspacing="0" style="border-top: 2px solid #dee2e6; margin-bottom: 0rem; table-layout: fixed">
+                            <colgroup>
+                                <col width="10%">
+                                <col width="45%">
+                                <col width="15%">
+                                <col width="15%">
+                                <col width="15%">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th style="text-align: center">No</th>
+                                    <th style="text-align: center">제목</th>
+                                    <th style="text-align: center">작성자</th>
+                                    <th style="text-align: center">작성일시</th>
+                                    <th style="text-align: center">조회수</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                        <table class="table table-bordered text-center" id="ReviewTable" width="100%" cellspacing="0" style="table-layout: fixed">
+                            <colgroup>
+                                <col width="10%">
+                                <col width="45%">
+                                <col width="15%">
+                                <col width="15%">
+                                <col width="15%">
+                            </colgroup>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="search mb-3">
+                        <select class="float-left" id="searchOption">
+                            <option value="title" selected>제목</option>
+                            <option value="content">내용</option>
+                            <option value="all">제목+내용</option>
+                        </select>
+                        <input type="text" class="form-control float-left" id="searchKeyword">
+                        <button type="button" class="btn-cash btn btn-primary float-left" id="searchBtn">검색</button>
+                        <button type="button" class="btn-cash btn btn-primary float-right" id="writeBtn" onclick="location.href='reviewwrite.html'">글쓰기</button>
+                    </div>
+                    <br>
+                    <div id="pageListDiv">
+                        <div class="list-group list-group-horizontal text-center justify-content-center" id="pageList">
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- jQuery Easing -->
+    <script src="js/CLIENT_js/jquery.easing.1.3.js"></script>
+    <!-- Bootstrap -->
+    <script src="js/CLIENT_js/bootstrap.min.js"></script>
+
+    <script>
+        includeHTML();
+
+    </script>
+
+    <!-- Carousel -->
+    <script src="js/CLIENT_js/owl.carousel.min.js"></script>
+    <!-- Stellar -->
+    <script src="js/CLIENT_js/jquery.stellar.min.js"></script>
+    <!-- Waypoints -->
+    <script src="js/CLIENT_js/jquery.waypoints.min.js"></script>
+    <!-- Counters -->
+    <script src="js/CLIENT_js/jquery.countTo.js"></script>
+
+    <script src="js/CLIENT_js/review.js"></script>
+    <!-- MAIN JS -->
+    <script src="js/CLIENT_js/main.js"></script>
+    
+    <script src="js/CLIENT_js/asideMobileSetting.js"></script>
+
+
+</body>
+
+</html>

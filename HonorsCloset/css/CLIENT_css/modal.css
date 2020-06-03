@@ -1,0 +1,251 @@
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba( 0, 0, 0, 0.8 );
+    
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin:auto;
+  padding: 0;
+  width: 50%;
+  margin-bottom: 5%;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 60px;
+  right: 25px;
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mySlides {
+  display: none;
+}
+
+.mySlides img{
+    width:100%;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 60px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.prev{
+    
+}
+/* Position the "next button" to the right */
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+ background-color: rgba(255,255,255,0);
+    text-decoration: none;
+    color: white;
+}
+.prev:active,
+.next:active {
+ background-color: rgba(255,255,255,0);
+    text-decoration: none;
+    color: red;
+}
+    .prev:focus,
+.next:focus {
+ background-color: rgba(255,255,255,0);
+    text-decoration: none;
+    color: white;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: black;
+  position: absolute;
+  font-size: 14px;
+  padding: 8px 12px;
+  top: 0;
+  font-weight: bold;
+}
+.slideshow-container {
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+    .modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba( 0, 0, 0, 0.8 );
+    
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin:auto;
+  padding: 0;
+  width: 75%;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 50px;
+  right: 25px;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mySlides {
+  display: none;
+}
+
+.mySlides img{
+    width:100%;
+    max-height: 400px;
+    min-height: 250px;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 40px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.prev{
+    
+}
+/* Position the "next button" to the right */
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+ background-color: rgba(255,255,255,0);
+    text-decoration: none;
+    color: white;
+}
+.prev:active,
+.next:active {
+ background-color: rgba(255,255,255,0);
+    text-decoration: none;
+    color: red;
+}
+    .prev:focus,
+.next:focus {
+ background-color: rgba(255,255,255,0);
+    text-decoration: none;
+    color: white;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: black;
+  position: absolute;
+  font-size: 14px;
+  padding: 8px 12px;
+  top: 0;
+  font-weight: bold;
+}
+.slideshow-container {
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+}
+}
+

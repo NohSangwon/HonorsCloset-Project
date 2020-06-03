@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>금오공과대학교 명예옷장</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
+    <meta name="keywords" content="free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+    <meta name="author" content="FreeHTML5.co" />
+
+    <!-- 
+	//////////////////////////////////////////////////////
+
+	FREE HTML5 TEMPLATE 
+	DESIGNED & DEVELOPED by FreeHTML5.co
+		
+	Website: 		http://freehtml5.co/
+	Email: 			info@freehtml5.co
+	Twitter: 		http://twitter.com/fh5co
+	Facebook: 		https://www.facebook.com/fh5co
+
+	//////////////////////////////////////////////////////
+	 -->
+
+    <!-- Facebook and Twitter integration -->
+    <meta property="og:title" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:description" content="" />
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:url" content="" />
+    <meta name="twitter:card" content="" />
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="css/CLIENT_css/animate.css">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="css/CLIENT_css/icomoon.css">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="css/CLIENT_css/bootstrap.css">
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="css/CLIENT_css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/CLIENT_css/owl.theme.default.min.css">
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="css/CLIENT_css/style.css">
+
+    <!-- Modernizr JS -->
+    <script src="js/CLIENT_js/modernizr-2.6.2.min.js"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+
+    <script src="./admin/js/ADMIN_js/includeHTML.js"></script>
+</head>
+
+<body>
+    <div id="includeHTML" include-html="topNavibar.html"></div>
+
+    <div id="includeHTML" include-html="aside.html"></div>
+
+    <div id="fh5co-page">
+        <div class="fh5co-narrow-content" id="articleContentArea">
+            <h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">Article</h2>
+            
+        </div>
+    </div>  
+
+    <!-- jQuery -->
+    <script src="js/CLIENT_js/jquery.min.js"></script>
+    <!-- jQuery Easing -->
+    <script src="js/CLIENT_js/jquery.easing.1.3.js"></script>
+
+    <script>
+        includeHTML();
+
+    </script>
+
+    <!-- Bootstrap -->
+    <script src="js/CLIENT_js/bootstrap.min.js"></script>
+    <!-- Carousel -->
+    <script src="js/CLIENT_js/owl.carousel.min.js"></script>
+    <!-- Stellar -->
+    <script src="js/CLIENT_js/jquery.stellar.min.js"></script>
+    <!-- Waypoints -->
+    <script src="js/CLIENT_js/jquery.waypoints.min.js"></script>
+    <!-- Counters -->
+    <script src="js/CLIENT_js/jquery.countTo.js"></script>
+
+
+
+    <!-- MAIN JS -->
+    <script src="js/CLIENT_js/main.js"></script>
+
+    <script src="js/CLIENT_js/asideMobileSetting.js"></script>
+    
+    <script>
+         $.ajax({
+            type: "GET",
+            url: '/Article/loadArticle',
+            dataType: 'json',
+            success: function (data) {
+                createImages(data);
+            },
+             error: function (e) {
+                    alert(e.responseText);
+          }
+        });
+
+//      function createImages(image){
+//          var strDom="";
+//          for(var i = 0 ; i < image.length ; i ++){
+//                
+//            console.log(image[i]);
+//
+//                strDom+='<div class="col-md-4 work-item">';
+//                strDom+='<a href="'+image[i].URL+'" target="_blank">';
+//                strDom+='<img src="'+ image[i].Thumbnail+'" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">';
+//                strDom+='<h3 class="fh5co-work-title">'+image[i].Title+'</h3>';
+//                strDom+='<p>'+image[i].Date+'</p></a></div>';
+//          }
+//          
+//          var imageContainer=$("#myTable");
+//          imageContainer.append(strDom);
+//          
+//        }
+        function createImages(image) {
+            for (var i = 0; i < image.length;) {
+                var articleContentArea = document.querySelector('#articleContentArea');
+                
+                var row = document.createElement('div');
+                row.className = "row";
+                row.setAttribute('data-animate-effect', 'fadeInLeft');
+                articleContentArea.appendChild(row);
+
+                for (var j = 0; j < 3; j++) {
+                    var col = document.createElement('div');
+                    col.className = "col-md-4 work-item";
+                    row.appendChild(col);
+
+                    var a = document.createElement('a');
+                    a.href = image[i].URL;
+                    a.target = "_blank";
+                    col.appendChild(a);
+
+                    var img = document.createElement('img');
+                    img.src = image[i].Thumbnail;
+                    img.alt = "등록된 이미지가 없습니다."
+                    img.className = "img-responsive";
+                    a.appendChild(img);
+
+                    var h3 = document.createElement('h3');
+                    h3.className = "fh5co-work-title";
+                    h3.innerHTML = image[i].Title;
+                    a.appendChild(h3);
+
+                    var p = document.createElement('p');
+                    p.innerHTML = image[i].Date;
+                    a.appendChild(p);
+                    		
+                    i++;
+
+                    if (i >= image.length) break;
+                }
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
+
+

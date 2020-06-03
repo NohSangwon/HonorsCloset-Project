@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        #signUpChartArea {
+            -webkit-padding-right: 0;
+            -moz-padding-right: 0;
+            -o-padding-right: 0;
+            padding-right: 2rem;
+            max-height: 550px;
+        }
+</style>
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>명예옷장 관리자 페이지</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/ADMIN_vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Page level plugin CSS-->
+    <link href="vendor/ADMIN_vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/ADMIN_css/sb-admin.css" rel="stylesheet">
+
+    <script src="vendor/ADMIN_vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/ADMIN_vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/ADMIN_js/checkIsManager.js"></script>
+    <script src="js/ADMIN_js/includeHTML.js"></script>
+</head>
+
+<body id="page-top" class="sidebar-toggled">
+    <div style="margin-top: 55px"></div>
+    <!-- Navbar -->
+    <div id="includeHTML" include-html="navbar.html"></div>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="includeHTML" include-html="sidebar.html"></div>
+
+        <div id="content-wrapper">
+
+            <div class="container-fluid">
+                <!-- Area Chart Example-->
+                <div class="card mb-3">
+                    <div class="card-header">
+                        <i class="fas fa-chart-area"></i>
+                        회원가입 통계
+                        <l class="float-right" style="margin-right: 2rem">총 가입자수 : <sqan id="totalSignUp">0</sqan>
+                        </l>
+                    </div>
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-lg-4 col-sm-4" id="fromDateTime">
+                                <div class="row mb-3" style="padding-left: 5%; padding-right: 5%;">
+                                    <span style="width: 20%;">From :</span>
+                                    <input type="text" class="" id="datepicker1" style="width: 70%;">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-sm-4" id="toDateTime">
+                                <div class="row mb-3" style="padding-left: 5%; padding-right: 5%;">
+                                    <span style="width: 20%;">To :</span>
+                                    <input type="text" class="" id="datepicker2" style="width: 70%;">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-sm-4">
+                                <button type="button" class="btn btn-primary" id="yearBtn" style="width: 30%;">년별통계</button>
+                                <button type="button" class="btn btn-primary" id="monthBtn" style="width: 30%;">월별통계</button>
+                                <button type="button" class="btn btn-primary focus" id="dayBtn" style="width: 30%;">일별통계</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body" id="canvasArea" style="padding-top: 0.5rem;">
+                        <l class="float-right mb-1 fa-sm" style="margin-right: 2rem">조회기간 가입자수 : <sqan id="totalSignUpOnSearch">0</sqan>
+                        </l>
+                        <canvas id="signUpChartArea" width="100%" height="30"></canvas>
+                    </div>
+                </div>
+            </div>
+            <!-- /.container-fluid -->
+            <!-- Sticky Footer -->
+            <div id="includeHTML" include-html="footer.html"></div>
+
+        </div>
+    </div>
+    <!-- /.content-wrapper -->
+    <!-- /#wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div id="includeHTML" include-html="logoutModal.html"></div>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/ADMIN_vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/ADMIN_vendor/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+    <link rel="stylesheet" href="vendor/ADMIN_vendor/jquery-ui-1.12.1.custom/jquery-ui.css">
+
+
+    <script>
+        includeHTML();
+
+    </script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/ADMIN_js/sb-admin.min.js"></script>
+
+    <!-- Page level plugin JavaScript-->
+    <script src="vendor/ADMIN_vendor/chart.js/Chart.min.js"></script>
+
+    <script src="js/ADMIN_js/Statics_SignUp.js"></script>
+
+</body>
+
+</html>

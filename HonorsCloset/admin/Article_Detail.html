@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>명예옷장 관리자 페이지</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/ADMIN_vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Page level plugin CSS-->
+    <link href="vendor/ADMIN_vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/ADMIN_css/sb-admin.css" rel="stylesheet">
+
+    <script src="vendor/ADMIN_vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/ADMIN_vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/ADMIN_js/checkIsManager.js"></script>
+    <script src="js/ADMIN_js/includeHTML.js"></script>
+</head>
+
+<body id="page-top" class="sidebar-toggled">
+    <div style="margin-top: 55px"></div>
+    <!-- Navbar -->
+    <div id="includeHTML" include-html="navbar.html"></div>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="includeHTML" include-html="sidebar.html"></div>
+
+        <div id="content-wrapper">
+
+            <div class="container-fluid">
+                <!--        내용          -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-lg-8 col-sm-8 mb-3">
+                                <i class="fas fa-fw fa-newspaper"></i>
+                                <l class="fa-lg">기사 정보 수정</l>
+                            </div>
+
+                            <div class="col-lg-4 col-sm-4">
+                                <button type="button" class="btn-account btn btn-primary float-right" id="deleteArticleBtn">삭제</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-body" id="articleArea">
+                        <form action="#" id="updateArticleForm" method="post" enctype="multipart/form-data">
+                            <div class="row">
+                                <div class="col-lg-6 col-sm-6 mb-3">
+                                    <table class="text-center">
+                                        <tr>
+                                            <td>제목</td>
+                                            <td><input class="form-control" type="text" id="articleTitle" name="articleTitle"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>기사 날짜</td>
+                                            <td>
+                                                <input class="form-control" type="date" id="articleDate" name="articleDate">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>기사 URL</td>
+                                            <td>
+                                                <input class="form-control" type="text" id="articleURL" name="articleURL">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>썸네일</td>
+                                            <td>
+                                                <input type="file" class="form-control" id="articleThumbnail" name="articleThumbnail" accept=".jpg, .jpeg, .png">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="col-lg-6 col-sm-6 mb-3">
+                                    <p>이전 Thumbnail</p>
+                                    <img id="currArticleThumbnail" alt="등록된 이미지가 없습니다" name="currArticleThumbnail" width="200px" height="auto">
+                                </div>
+                            </div>
+
+
+                            <div class="content-bottom float-right" style="display: flex;">
+                                <button type="button" class="btn btn-primary" id="updateArticleSubmitBtn">수정</button>
+                                <a href="Article"><button type="button" class="btn btn-primary" id="updateArticleCancel">목록</button></a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!--        내용          -->
+                <style>
+                    #currArticleThumbnail {
+                        border: 4px dashed #bcbcbc;
+                        min-height: 180px;
+                        min-width: 180px;
+                    }
+
+                    #updateArticleSubmitBtn {
+                        margin-right: 1rem;
+                    }
+
+                </style>
+
+            </div>
+
+            <!-- Sticky Footer -->
+            <div id="includeHTML" include-html="footer.html"></div>
+
+        </div>
+    </div>
+    <!-- /.content-wrapper -->
+    <!-- /#wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div id="includeHTML" include-html="logoutModal.html"></div>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/ADMIN_vendor/jquery-easing/jquery.easing.min.js"></script>
+
+
+    <script>
+        includeHTML();
+
+    </script>
+    <!-- Custom scripts for all pages-->
+    <script src="js/ADMIN_js/sb-admin.min.js"></script>
+    <script src="vendor/ADMIN_vendor/jquery/jquery.form.min.js"></script>
+    <script src="js/ADMIN_js/Article_Detail.js"></script>
+
+</body>
+
+</html>

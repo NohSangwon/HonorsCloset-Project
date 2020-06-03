@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'DXMSubtitlesM-KSCpc-EUC-H';
+    src: url(DXMSubtitlesM-KSCpc-EUC-H.ttf);
+    src: url(DXMSubtitlesM-KSCpc-EUC-H.woff);
+}
+@font-face { font-family: Snickles; src: url(Snickles.ttf); src: url(Snickles.woff); }
+@font-face { font-family: BMDOHYEON_ttf; src: url(BMDOHYEON_ttf.ttf); src: url(BMDOHYEON_ttf.woff); }
+@font-face { font-family: BMJUA_ttf; src: url(BMJUA_ttf.ttf); src: url(BMJUA_ttf.woff); }
+@font-face { font-family: 나눔고딕; src: url(나눔고딕.ttf); src: url(나눔고딕.woff); }
+@font-face { font-family: NanumSquareR; src: url(NanumSquareR.ttf); src: url(NanumSquareR.woff); }
+@font-face { font-family: NanumSquareB; src: url(NanumSquareB.ttf); src: url(NanumSquareB.woff); }

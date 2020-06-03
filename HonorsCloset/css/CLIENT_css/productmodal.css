@@ -1,0 +1,30 @@
+.close {
+    font-size: 80px;
+    float: right;
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+.close:hover,
+.close:focus {
+    text-decoration: none;
+    cursor: pointer;
+}
+#user-page{
+height:40px;
+}
+#tablist{
+margin-top:40px;
+height:100px;
+}
+
+@media only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px) {
+#user-page{
+height:40px;
+}
+#tablist{
+margin-top:40px;
+height:140px;
+}
+}

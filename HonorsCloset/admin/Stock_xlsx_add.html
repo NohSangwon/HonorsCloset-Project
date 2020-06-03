@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>명예옷장 관리자 페이지</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/ADMIN_vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Page level plugin CSS-->
+    <link href="vendor/ADMIN_vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/ADMIN_css/sb-admin.css" rel="stylesheet">
+
+    <script src="vendor/ADMIN_vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/ADMIN_vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/ADMIN_js/checkIsManager.js"></script>
+    <script src="js/ADMIN_js/includeHTML.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.14.3/xlsx.full.min.js"></script>
+</head>
+
+<body id="page-top" class="sidebar-toggled">
+    <div style="margin-top: 55px"></div>
+    <!-- Navbar -->
+    <div id="includeHTML" include-html="navbar.html"></div>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="includeHTML" include-html="sidebar.html"></div>
+
+        <div id="content-wrapper">
+
+            <div class="container-fluid">
+
+                <div class="card mb-3">
+                    <div class="card-header">
+                        <div class="row">
+
+                            <div class="col-lg-8 col-sm-8">
+                                파일 선택 : <input type="file" id="excelFile" onchange="excelExport(event)" />
+                            </div>
+                            <div class="col-lg-4 col-sm-4">
+                                <button type="button" class="btn btn-primary focus float-right" id="submitBtn" style="width: 30%;">등록</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-3">
+                    <div class="card-header">
+                        <i class="fas fa-chart-area"></i>
+                        입력 상품 목록
+                        <l class="float-right" style="margin-right: 2rem">입력된 데이터 총갯수 : <sqan id="totalData">0</sqan>
+                        </l>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered text-center" id="xlsxProductTable" width="100%" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>상품코드</th>
+                                        <th>최초가격</th>
+                                        <th>입고날짜</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Sticky Footer -->
+            <div id="includeHTML" include-html="footer.html"></div>
+
+        </div>
+    </div>
+    <!-- /.content-wrapper -->
+    <!-- /#wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div id="includeHTML" include-html="logoutModal.html"></div>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/ADMIN_vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <script>
+        includeHTML();
+
+    </script>
+    <!-- Custom scripts for all pages-->
+    <script src="js/ADMIN_js/sb-admin.min.js"></script>
+
+    <script src="js/ADMIN_js/Stock_xlsx_add.js"></script>
+
+
+</body>
+
+</html>

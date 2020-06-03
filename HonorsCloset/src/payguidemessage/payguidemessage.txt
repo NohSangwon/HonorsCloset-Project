@@ -1,0 +1,10 @@
+<h1 style="text-align: center;">구매가 완료되었습니다.</h1>
+<h1 style="text-align: center;">아래의 계좌로 2시간 이내로 입금 해주세요.</h1>
+<h1 style="text-align: center;">입금하지 않을 경우 구매가 취소됩니다.</h1>
+<h1 style="text-align: center;">(입금자명을 ID로 입력해주세요)</h1>
+<h1 style="text-align: center;">입금자명 예시 - ABC123@naver.com -&gt; ABC123</h1>
+<p>&nbsp;</p>
+<h1 style="text-align: center;">농협 : 302-7587-7376-11<br />예금주명 : 목지현</h1>
+<p style="text-align: center;">&nbsp;</p>
+<h2 style="text-align: center;"><strong>입금 확인이 된 후, 아래의 주소지로 방문 수령해주시기 바랍니다.</strong></h2>
+<h2 style="text-align: center;"><strong>금오공과대학교 글로벌관 544호 10:00~18:00 (11월 1일~16일)</strong></h2>

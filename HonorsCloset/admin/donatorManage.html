@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>명예옷장 관리자 페이지</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/ADMIN_vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Page level plugin CSS-->
+    <link href="vendor/ADMIN_vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/ADMIN_css/sb-admin.css" rel="stylesheet">
+
+    <script src="vendor/ADMIN_vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/ADMIN_vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/ADMIN_js/checkIsManager.js"></script>
+    <script src="js/ADMIN_js/includeHTML.js"></script>
+</head>
+
+<body id="page-top" class="sidebar-toggled">
+    <div style="margin-top: 55px"></div>
+    <!-- Navbar -->
+    <div id="includeHTML" include-html="navbar.html"></div>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="includeHTML" include-html="sidebar.html"></div>
+
+        <div id="content-wrapper">
+
+            <div class="container-fluid">
+
+                <!--        내용          -->
+                <div id="BackgroundImg-wrapper">
+                    ● 기부자 명단 변경
+                    <br><br>
+                    <textarea id="TinymceDonator"></textarea>
+                    <button id="updateDonatorListBtn" class="btn btn-primary mt-3">기부자명단변경하기</button>
+                    <br><br>
+                </div>
+
+                <!-- Sticky Footer -->
+                <div id="includeHTML" include-html="footer.html"></div>
+                <!--        내용          -->
+
+            </div>
+
+            <!-- Sticky Footer -->
+            <div id="includeHTML" include-html="footer.html"></div>
+
+        </div>
+    </div>
+    <!-- /.content-wrapper -->
+    <!-- /#wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div id="includeHTML" include-html="logoutModal.html"></div>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/ADMIN_vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Page level plugin JavaScript-->
+    <script src="vendor/ADMIN_vendor/datatables/jquery.dataTables.js"></script>
+    <script src="vendor/ADMIN_vendor/datatables/dataTables.bootstrap4.js"></script>
+
+    <script>
+        includeHTML();
+
+    </script>
+    <!-- Custom scripts for all pages-->
+    <script src="js/ADMIN_js/sb-admin.min.js"></script>
+
+    <!-- Demo scripts for this page-->
+    <script src="js/ADMIN_js/demo/datatables-demo.js"></script>
+    <script src="js/ADMIN_js/demo/chart-area-demo.js"></script>
+
+
+    <script src="js/ADMIN_js/donatorManager.js"></script>
+    
+    <!-- Load Tinymce (Editor) -->
+    <script src="tinymce/js/tinymce/tinymce.min.js"></script>
+    <script>
+        // Tinymce Load
+        tinymce.init({
+            selector: '#TinymceDonator',
+            height: 400,
+            language: 'ko_KR',
+        });
+
+    </script>
+
+</body>
+
+</html>

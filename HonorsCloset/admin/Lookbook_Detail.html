@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Expires" content="Mon, 06 Jan 1990 00:00:01 GMT">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-store">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>명예옷장 관리자 페이지</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/ADMIN_vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Page level plugin CSS-->
+    <link href="vendor/ADMIN_vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/ADMIN_css/sb-admin.css" rel="stylesheet">
+
+    <script src="vendor/ADMIN_vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/ADMIN_vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/ADMIN_js/checkIsManager.js"></script>
+    <script src="js/ADMIN_js/includeHTML.js"></script>
+    <style>
+        .img-item {
+            text-align: center;
+        }
+
+        .imgTable {
+            column-gap:
+        }
+
+        #sectionImg,{
+            width: 100%;
+        }
+
+        .img-item img {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            margin: 5px;
+        }
+
+        #realImgView,{
+            width: 150px;
+            height: auto;
+            min-width: 100px;
+            min-height: auto;
+        }
+        
+        #imageArea {
+            height: 100%;
+        }
+        
+        #realImg,{
+            width: 100%;
+            height: auto;
+        }
+
+
+        .imgSection {
+            border: 1px solid #bcbcbc;
+            padding-top: 1rem;
+            min-height: 180px;
+            min-width: 180px;
+        }
+    </style>
+</head>
+
+<body id="page-top" class="sidebar-toggled">
+    <div style="margin-top: 55px"></div>
+
+    <!-- Navbar -->
+    <div id="includeHTML" include-html="navbar.html"></div>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="includeHTML" include-html="sidebar.html"></div>
+
+        <div id="content-wrapper">
+
+            <div class="container-fluid">
+
+                <!--        내용          -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-lg-8 col-sm-8 mb-3">
+                                <i class="fas fa-fw fa-image"></i>
+                                <l class="fa-lg" id="seasonNameH">시즌명</l>
+                            </div>
+                            <div class="col-lg-4 col-sm-4">
+                                <button class="btn-account btn btn-primary float-right" id="deleteBehindcutBtn">시즌 삭제</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-body" id="imageArea">
+                        <div class="row">
+                            <l class="fa-lg">동영상</l>
+                            <hr style="width: 100%">
+                            <div class="col-lg-6 col-sm-6 mb-3">
+                                <video width="100%" height="auto" autoplay controls id="videoArea">
+                                    <source src="#" type="video/mp4" id="videoSource">
+                                </video>
+                            </div>
+                            <div class="col-lg-6 col-sm-6 mb-3">
+                                <form action="" id="videoInsertForm" method="post" enctype="multipart/form-data" onsubmit="return false;">
+                                    <input type="file" id="videoFile" name="videoFile" style="width: 100%; max-width: 300px;" accept=".mp4 ,.mkv">
+                                    <button class="btn btn-primary float-right" id="updateVideoBtn">업로드</button>
+                                </form>
+                                <br><br>
+                                <button class="btn-account btn btn-primary" id="deleteVideoBtn">기존 영상 삭제</button>
+                            </div>
+                            <hr style="width: 100%">
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div class="card">
+                    <form action="" id="imgInsertForm" method="post" enctype="multipart/form-data" onsubmit="return false;">
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col-lg-8 col-sm-8 mb-3">
+                                    <l class="fa-lg" id="seasonNameH">이미지 추가</l>
+                                </div>
+                                
+                                <div class="col-lg-4 col-sm-4">
+                                    <button class="btn-account btn btn-primary float-right" id="insertNewImgBtn">저장</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-body" id="addImgArea">
+                            <button class="btn-account btn btn-primary" id="addInputAreaBtn">입력란 추가</button>
+                        </div>
+                    </form>
+                </div>
+                <!--        내용          -->
+
+            </div>
+
+            <!-- Sticky Footer -->
+            <div id="includeHTML" include-html="footer.html"></div>
+
+        </div>
+    </div>
+    <!-- /.content-wrapper -->
+    <!-- /#wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div id="includeHTML" include-html="logoutModal.html"></div>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/ADMIN_vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/ADMIN_vendor/jquery/jquery.form.min.js"></script>
+
+    <script>
+        includeHTML();
+
+    </script>
+    <!-- Custom scripts for all pages-->
+    <script src="js/ADMIN_js/sb-admin.min.js"></script>
+
+    <script src="js/ADMIN_js/Lookbook_Detail.js"></script>
+
+</body>
+
+</html>

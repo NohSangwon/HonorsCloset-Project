@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>명예옷장 관리자 페이지</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/ADMIN_vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template-->
+    <link href="css/ADMIN_css/sb-admin.css" rel="stylesheet">
+
+    <script src="vendor/ADMIN_vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/ADMIN_vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/ADMIN_js/checkIsManager.js"></script>
+    <script src="js/ADMIN_js/includeHTML.js"></script>
+</head>
+
+<body id="page-top" class="sidebar-toggled">
+    <div style="margin-top: 55px"></div>
+    <!-- Navbar -->
+    <div id="includeHTML" include-html="navbar.html"></div>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="includeHTML" include-html="sidebar.html"></div>
+
+        <div id="content-wrapper">
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="container-left col-lg-6 col-sm-6 mb-3">
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#A" id="tab_A">전체</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#T" id="tab_T">상의</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#B" id="tab_B">하의</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#S" id="tab_S">정장류</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#O" id="tab_O">외투</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#G" id="tab_G">잡화</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#E" id="tab_E">기타</a>
+                            </li>
+                        </ul>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <input type="text" class="form-control" placeholder="품목코드" id="searchProductKeyword" autofocus>
+                            </div>
+                        </div>
+
+                        <div class="tab-content">
+                            <div class="tab-pane fade show active" id="A">
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered text-center" id="saleAProductTable" width="100%" cellspacing="0">
+                                                <thead>
+                                                    <tr>
+                                                        <th>품목코드</th>
+                                                        <th>입고일</th>
+                                                        <th>입고 가격</th>
+                                                        <th>할인율</th>
+                                                        <th>할인 가격</th>
+                                                        <th>판매 금액</th>
+                                                        <th>판매등록</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="T">
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered text-center" id="saleTProductTable" width="100%" cellspacing="0">
+                                                <thead>
+                                                    <tr>
+                                                        <th>품목코드</th>
+                                                        <th>입고일</th>
+                                                        <th>입고 가격</th>
+                                                        <th>할인율</th>
+                                                        <th>할인 가격</th>
+                                                        <th>판매 금액</th>
+                                                        <th>판매등록</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="B">
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered text-center" id="saleBProductTable" width="100%" cellspacing="0">
+                                                <thead>
+                                                    <tr>
+                                                        <th>품목코드</th>
+                                                        <th>입고일</th>
+                                                        <th>입고 가격</th>
+                                                        <th>할인율</th>
+                                                        <th>할인 가격</th>
+                                                        <th>판매 금액</th>
+                                                        <th>판매등록</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="S">
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered text-center" id="saleSProductTable" width="100%" cellspacing="0">
+                                                <thead>
+                                                    <tr>
+                                                        <th>품목코드</th>
+                                                        <th>입고일</th>
+                                                        <th>입고 가격</th>
+                                                        <th>할인율</th>
+                                                        <th>할인 가격</th>
+                                                        <th>판매 금액</th>
+                                                        <th>판매등록</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="O">
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered text-center" id="saleOProductTable" width="100%" cellspacing="0">
+                                                <thead>
+                                                    <tr>
+                                                        <th>품목코드</th>
+                                                        <th>입고일</th>
+                                                        <th>입고 가격</th>
+                                                        <th>할인율</th>
+                                                        <th>할인 가격</th>
+                                                        <th>판매 금액</th>
+                                                        <th>판매등록</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="G">
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered text-center" id="saleGProductTable" width="100%" cellspacing="0">
+                                                <thead>
+                                                    <tr>
+                                                        <th>품목코드</th>
+                                                        <th>입고일</th>
+                                                        <th>입고 가격</th>
+                                                        <th>할인율</th>
+                                                        <th>할인 가격</th>
+                                                        <th>판매 금액</th>
+                                                        <th>판매등록</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="E">
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered text-center" id="saleEProductTable" width="100%" cellspacing="0">
+                                                <thead>
+                                                    <tr>
+                                                        <th>품목코드</th>
+                                                        <th>입고일</th>
+                                                        <th>입고 가격</th>
+                                                        <th>할인율</th>
+                                                        <th>할인 가격</th>
+                                                        <th>판매 금액</th>
+                                                        <th>판매등록</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-right col-lg-6 col-sm-6 mb-3">
+                        <div class="card mb-3">
+                            <div class="card-header">
+                                <div class="row">
+                                    <div class="col-lg-8 col-sm-8">
+                                        <l class="fa-lg">판매목록</l>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-4">
+                                        <button type="button" class="btn-account btn btn-primary float-right" id="removeBasketBtn">취소</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered text-center" id="basketTable" width="100%" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th>품목코드</th>
+                                                <th>입고일</th>
+                                                <th>입고 가격</th>
+                                                <th>할인율</th>
+                                                <th>할인 가격</th>
+                                                <th>판매 금액</th>
+                                                <th>삭제</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="total-amount card mb-3">
+                                    <div class="card-header">
+                                        <l class="fa-lg" style="text-align: center;">합계 : <span id="totalAmount">0</span> 원</l>
+                                    </div>
+                                </div>
+                                <style>
+                                    .btn-cash,
+                                    .btn-account {
+                                        width: 100%;
+                                    }
+
+                                </style>
+                                <div class="row">
+                                    <div class="col-lg-6 col-sm-6 mb-3">
+                                        <button type="button" class="btn-cash btn btn-primary float-right" id="salesCashPayBtn">현금결제</button>
+                                    </div>
+                                    <div class="col-lg-6 col-sm-6 mb-3">
+                                        <button type="button" class="btn-account btn btn-primary float-right" id="salesAccountPayBtn">계좌이체 / TOSS</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div id="Over_div"></div>
+        </div>
+        <!-- /.container-fluid -->
+
+        <!-- Sticky Footer -->
+        <div id="includeHTML" include-html="footer.html"></div>
+
+    </div>
+    <!-- /.content-wrapper -->
+    <!-- /#wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div id="includeHTML" include-html="logoutModal.html"></div>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/ADMIN_vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Page level plugin JavaScript-->
+    <script src="vendor/ADMIN_vendor/datatables/jquery.dataTables.js"></script>
+    <script src="vendor/ADMIN_vendor/datatables/dataTables.bootstrap4.js"></script>
+
+
+    <script>
+        includeHTML();
+
+    </script>
+
+    <script src="js/ADMIN_js/sb-admin.min.js"></script>
+
+    <!-- Demo scripts for this page-->
+    <script src="js/ADMIN_js/demo/datatables-demo.js"></script>
+
+    <script src="js/ADMIN_js/Sell_sell.js"></script>
+</body>
+
+</html>

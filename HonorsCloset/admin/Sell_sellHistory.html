@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>명예옷장 관리자 페이지</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/ADMIN_vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template-->
+    <link href="css/ADMIN_css/sb-admin.css" rel="stylesheet">
+
+    <script src="vendor/ADMIN_vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/ADMIN_vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/ADMIN_js/checkIsManager.js"></script>
+    <script src="js/ADMIN_js/includeHTML.js"></script>
+
+    <style>
+        /*datepicer 버튼 롤오버 시 손가락 모양 표시*/
+        .ui-datepicker-trigger {
+            cursor: pointer;
+        }
+
+        /*datepicer input 롤오버 시 손가락 모양 표시*/
+        .hasDatepicker {
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+
+<body id="page-top" class="sidebar-toggled">
+    <div style="margin-top: 55px"></div>
+    <!-- Navbar -->
+    <div id="includeHTML" include-html="navbar.html"></div>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="includeHTML" include-html="sidebar.html"></div>
+
+        <div id="content-wrapper">
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="container-left col-lg-6 col-sm-6 mb-3">
+                        <div class="card mb-3">
+                            <div class="card-header">
+                                <div class="row">
+                                    <div class="col-lg-8 col-sm-8 mb-3">
+                                        <l class="fa-lg">판매내역</l>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-4">
+                                        <button type="button" class="btn-account btn btn-primary float-right" id="getSalesHistoryBtn">조회</button>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="card-header">
+
+                                <div class="card-header mb-2">
+                                    <input type="text" class="form-control" placeholder="주문코드" id="searchKeyword">
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6 col-sm-6" id="fromDateTime">
+                                        <div class="row mb-3" style="padding-left: 5%; padding-right: 5%;">
+                                            <span style="width: 20%;">From :</span>
+                                            <input type="text" class="" id="datepicker1" style="width: 70%;">
+                                        </div>
+                                        <div class="row mb-3" id="fromTime" style="padding-left: 5%; padding-right: 5%;">
+
+                                        </div>
+
+                                    </div>
+                                    <div class="col-lg-6 col-sm-6" id="toDateTime">
+                                        <div class="row mb-3" style="padding-left: 5%; padding-right: 5%;">
+                                            <span style="width: 20%;">To :</span>
+                                            <input type="text" class="" id="datepicker2" style="width: 70%;">
+                                        </div>
+                                        <div class="row mb-3" id="toTime" style="padding-left: 5%; padding-right: 5%;">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered text-center table-hover" id="salesHistoryTable" width="100%" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th>주문코드</th>
+                                                <th>구매자</th>
+                                                <th>판매일시</th>
+                                                <th>판매액</th>
+                                                <th>결재방식</th>
+                                                <th>취소여부</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-right col-lg-6 col-sm-6 mb-3">
+                        <div class="card mb-3">
+                            <div class="card-header">
+                                <l class="fa-lg">상세판매내역</l>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered text-center" id="orderDetaileTable" width="100%" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th>주문코드</th>
+                                                <th>구매자</th>
+                                                <th>판매일시</th>
+                                                <th>판매액</th>
+                                                <th>결재방식</th>
+                                                <th>취소여부</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="card-header">
+                                    <l class="fa-lg">주문상품</l>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table table-bordered text-center" id="orderedProductsTable" width="100%" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th>품목코드</th>
+                                                <th>입고 날짜</th>
+                                                <th>입고 가격</th>
+                                                <th>판매 금액</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <style>
+                                    .btn-cash,
+                                    .btn-account {
+                                        width: 100%;
+                                    }
+
+                                </style>
+                                <div class="row">
+                                    <div class="col-lg-6 col-sm-6 mb-3">
+                                        <button type="button" class="btn-cash btn btn-primary float-right" id="cancelSalesBtn">판매취소</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div id="Over_div"></div>
+        </div>
+        <!-- /.container-fluid -->
+
+        <!-- Sticky Footer -->
+        <div id="includeHTML" include-html="footer.html"></div>
+
+    </div>
+    <!-- /.content-wrapper -->
+    <!-- /#wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div id="includeHTML" include-html="logoutModal.html"></div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/ADMIN_vendor/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+    <link rel="stylesheet" href="vendor/ADMIN_vendor/jquery-ui-1.12.1.custom/jquery-ui.css">
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/ADMIN_vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <script>
+        includeHTML();
+
+    </script>
+    <!-- Custom scripts for all pages-->
+    <script src="js/ADMIN_js/sb-admin.min.js"></script>
+    <script src="js/ADMIN_js/Sell_sellHisotory.js"></script>
+</body>
+
+</html>

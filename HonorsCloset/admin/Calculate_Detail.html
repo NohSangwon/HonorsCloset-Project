@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>명예옷장 관리자 페이지</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/ADMIN_vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Page level plugin CSS-->
+    <link href="vendor/ADMIN_vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/ADMIN_css/sb-admin.css" rel="stylesheet">
+
+    <script src="vendor/ADMIN_vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/ADMIN_vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/ADMIN_js/checkIsManager.js"></script>
+    <script src="js/ADMIN_js/includeHTML.js"></script>
+</head>
+
+
+<body id="page-top" class="sidebar-toggled">
+    <div style="margin-top: 55px"></div>
+
+
+    <!-- Navbar -->
+    <div id="includeHTML" include-html="navbar.html"></div>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="includeHTML" include-html="sidebar.html"></div>
+
+        <div id="content-wrapper">
+            <div class="container-fluid">
+                <div class="card mb-3">
+                    <div class="card-header">
+                        <l class="fa-lg" id="seasonNameH">시즌명</l>
+                        <button type="button" class="btn btn-primary float-right" id="submitCalculateBtn">정산완료</button>
+                    </div>
+                    <div class="card-body">
+                        <!-- Tab 시작 -->
+                        <ul class="nav nav-tabs" id="DataTableTab">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" id="Tab_A" href="#">전체</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" id="Tab_T" href="#">상의</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" id="Tab_B" href="#">하의</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" id="Tab_S" href="#">정장류</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" id="Tab_O" href="#">외투</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" id="Tab_G" href="#">잡화</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" id="Tab_E" href="#">기타</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" id="Tab_Loss" href="#">감모 손실</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane fade show active">
+
+                                <div class="row mt-2" style="margin-left: 1px;">
+                                    <div class="col-lg-4 col-sm-4 mb-1" id="fromDateTime">
+                                        <span>From :</span>
+                                        <input type="text" id="fromYear" class="text-center" style="width: 15%" value="2019" readonly>
+                                        <span>&nbsp년&nbsp</span>
+                                        <select class="text-center" style="width: 15%" id="fromMonth">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                            <option>9</option>
+                                            <option>10</option>
+                                            <option>11</option>
+                                            <option>12</option>
+                                        </select>
+                                        <span>&nbsp월&nbsp</span>
+                                        <input type="text" id="fromDay" class="text-center" style="width: 15%" value="1" readonly>
+                                        <span>&nbsp일&nbsp</span>
+
+                                    </div>
+                                    <div class="col-lg-4 col-sm-4 mb-1" id="toDateTime">
+                                        <span style="padding-right: 20px;">To :</span>
+                                        <input type="text" id="toYear" class="text-center" style="width: 15%" value="2019" readonly>
+                                        <span>&nbsp년&nbsp</span>
+                                        <select class="text-center" style="width: 15%" id="toMonth">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                            <option>9</option>
+                                            <option>10</option>
+                                            <option>11</option>
+                                            <option>12</option>
+                                        </select>
+                                        <span>&nbsp월&nbsp</span>
+                                        <input type="text" id="toDay" class="text-center" style="width: 15%" value="31" readonly>
+                                        <span>&nbsp일&nbsp</span>
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-left: 1px;">
+                                    <div class="col-lg-4 col-sm-4 mb-1">
+                                        <span>시작코드 :</span>
+                                        <input type="text" id="fromCode" class="text-center" style="width: 60%" placeholder="ex) AAA001">
+                                    </div>
+                                    <div class="col-lg-4 col-sm-4 mb-1">
+                                        <span style="padding-right: 16px;">끝코드 :</span>
+                                        <input type="text" id="toCode" class="text-center" style="width: 60%" placeholder="ex) BBB100">
+                                    </div>
+                                    <div class="col-lg-4 col-sm-4 mb-1">
+                                        <button type="button" class="btn btn-primary" id="searchCalculateBtn">검색</button>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="card mb-3">
+                                    <input class="form-control" type="text" placeholder="코드 검색" id="DataTableSearch">
+                                    <br>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered text-center mb-1" id="DataTable" width="100%" cellspacing="0">
+                                            <colgroup>
+                                                <col width="5%">
+                                                <col width="10%">
+                                                <col width="10%">
+                                                <col width="10%">
+                                                <col width="10%">
+                                                <col width="10%">
+                                                <col width="10%">
+                                                <col width="10%">
+                                                <col width="10%">
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th>No</th>
+                                                    <th>상태</th>
+                                                    <th>품목코드</th>
+                                                    <th>입고금액</th>
+                                                    <th>할인액</th>
+                                                    <th>판매액</th>
+                                                    <th>감모액</th>
+                                                    <th>재고개수</th>
+                                                    <th>재고액</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered text-center" id="totalTable" width="100%" cellspacing="0">
+                                            <colgroup>
+                                                <col width="5%">
+                                                <col width="10%">
+                                                <col width="10%">
+                                                <col width="10%">
+                                                <col width="10%">
+                                                <col width="10%">
+                                                <col width="10%">
+                                                <col width="10%">
+                                                <col width="10%">
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th> </th>
+                                                    <th>합계</th>
+                                                    <th>[자산의 합계]</th>
+                                                    <th id='totalFirstPriceAmount' class="text-right">입고금액</th>
+                                                    <th id='totalDiscountAmount' class="text-right">판매액</th>
+                                                    <th id='totalLastPriceAmount' class="text-right">할인액</th>
+                                                    <th id='totalLossAmount' class="text-right">감모액</th>
+                                                    <th id='totalStockAmount'>재고개수</th>
+                                                    <th id='totalStockPriceAmount' class="text-right">재고액</th>
+                                                </tr>
+                                            </thead>
+                                            <thead>
+                                                <tr>
+                                                    <th>No</th>
+                                                    <th>상태</th>
+                                                    <th>품목코드</th>
+                                                    <th>입고금액</th>
+                                                    <th>할인액</th>
+                                                    <th>판매액</th>
+                                                    <th>감모액</th>
+                                                    <th>재고개수</th>
+                                                    <th>재고액</th>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6 col-sm-6 mb-1">
+                        <div class="card">
+                            <div class="card-header">
+                                <l class="fa-lg">현금흐름표</l>
+                                <button type="button" class="btn btn-primary float-right mt-0 mb-2" id="updateCashFlowBtn">수정</button>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered text-center mb-1" id="itemGroupTable" width="100%" cellspacing="0">
+                                        <colgroup>
+                                            <col width="10%">
+                                            <col width="40%">
+                                            <col width="40%">
+                                            <col width="10%">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>항목</th>
+                                                <th>금액</th>
+                                                <th>삭제</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>상품현금판매</td>
+                                                <td>10000</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>상품계좌판매</td>
+                                                <td>10000</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>서비스현금판매</td>
+                                                <td>10000</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>서비스계좌판매</td>
+                                                <td>10000</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <button type="button" class="btn btn-primary float-right mt-0 mb-2" id="addItemGroupBtn">행추가</button>
+                            </div>
+                        </div>
+
+                        <div class='card'>
+                            <div class="card-header">
+                                <l class="fa-lg">합계</l>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered text-center mb-1" id="cashFlowTotalTable" width="100%" cellspacing="0">
+                                        <colgroup>
+                                            <col width="30%">
+                                            <col width="30%">
+                                            <col width="30%">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th>현금유입</th>
+                                                <th>현금유출</th>
+                                                <th>현금수익</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th id="Income">10000</th>
+                                                <th id="Coss">10000</th>
+                                                <th id="NetIncome">10000</th>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-6 col-sm-6 mb-1">
+                        <div class='card'>
+                            <div class="card-header">
+                                <l class="fa-lg">상세항목</l>
+                            </div>
+                            <div class="card-body" id="detailSection">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered text-center mb-1" id="itemTable" width="100%" cellspacing="0">
+                                        <colgroup>
+                                            <col width="10%">
+                                            <col width="30%">
+                                            <col width="20%">
+                                            <col width="30%">
+                                            <col width="10%">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>항목</th>
+                                                <th>금액</th>
+                                                <th>비고</th>
+                                                <th>삭제</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /.container-fluid -->
+
+            <div id="Over_div"></div>
+
+        </div>
+        <!-- /.content-wrapper -->
+
+        <!-- Sticky Footer -->
+        <div id="includeHTML" include-html="footer.html"></div>
+    </div>
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div id="includeHTML" include-html="logoutModal.html"></div>
+
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/ADMIN_vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <script>
+        includeHTML();
+
+    </script>
+
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/ADMIN_js/sb-admin.min.js"></script>
+
+    <!-- Load Stock.js-->
+    <script src="js/ADMIN_js/Calculate_Detail.js"></script>
+    <script src="js/ADMIN_js/DataTable.js"></script>
+</body>
+
+
+</html>

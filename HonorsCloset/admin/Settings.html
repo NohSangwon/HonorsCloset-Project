@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Expires" content="Mon, 06 Jan 1990 00:00:01 GMT">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>명예옷장 관리자 페이지</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/ADMIN_vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+    <link rel="preload" href="../src/font/currFont.ttf" as="font">
+    <link rel="preload" href="../src/font/currFont.woff" as="font">
+
+    <link href="css/ADMIN_css/sb-admin.css" rel="stylesheet">
+    <link href="css/ADMIN_css/Settings.css" rel="stylesheet">
+    <link href="../src/font/fontList.css?" rel="stylesheet">
+
+
+    <script src="vendor/ADMIN_vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/ADMIN_vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/ADMIN_vendor/jquery.form.min.js"></script>
+
+    <script src="js/ADMIN_js/checkIsManager.js"></script>
+    <script src="js/ADMIN_js/includeHTML.js"></script>
+
+    <style>
+        @font-face {
+            font-family: currFont;
+            src: url(../../../src/font/currFont.ttf);
+            src: url(../../../src/font/currFont.woff);
+        }
+
+        #currFontExample {
+            font-family: currFont;
+        }
+
+        #selectedFontExample {
+            font-family: currFont;
+        }
+
+    </style>
+
+</head>
+
+<body id="page-top" class="sidebar-toggled">
+    <div style="margin-top: 55px"></div>
+    <!-- '등록' 오버레이 부분 시작-->
+    <div id="OverlayWrapper" class="fontOverLay">
+        <div id="OverlayContentWrapper">
+            <div class="row">
+                <div class="col-lg-12 col-sm-12">
+                    <form action="#" id="fontInsertForm" method="post" enctype="multipart/form-data">
+                        <div class="content-top justify-content-center mb-3" style="display: flex;">
+                            <div class="card">
+                                <p>폰트 파일을 등록후 저장버튼을 누르면 서버에 해당 폰트가 저장됩니다.</p>
+                                <p>(.ttf 파일만 업로드 가능합니다)</p>
+                            </div>
+                        </div>
+                        <div class="content-mid justify-content-center mb-3" style="display: flex;">
+                            <input type="file" id="fontFile" name="fontFile" style="width: 100%; max-width: 300px;" accept=".ttf">
+                        </div>
+                        <div class="content-bottom justify-content-center" style="display: flex;">
+                            <button type="button" class="btn btn-primary" id="insertFontSubmitBtn">저장</button>
+                            <button type="button" class="btn btn-primary" id="insertFontCancel">취소</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="OverlayWrapper" class="logoOverLay">
+        <div id="OverlayContentWrapper">
+            <div class="row">
+                <div class="col-lg-12 col-sm-12">
+                    <form action="#" id="logoInsertForm" method="post" enctype="multipart/form-data">
+                        <div class="content-top justify-content-center mb-3" style="display: flex;">
+                            <img src="" alt="등록된 사진이 없습니다." style="width: 150px; height: 150px;" id="logoImgView">
+                        </div>
+                        <div class="content-mid justify-content-center mb-3" style="display: flex;">
+                            <input type="file" id="logoImg" name="logoImg" style="width: 100%; max-width: 300px;" accept=".jpg, .jpeg, .png">
+                        </div>
+                        <div class="content-bottom justify-content-center" style="display: flex;">
+                            <button type="button" class="btn btn-primary" id="updateLogoSubmitBtn">저장</button>
+                            <button type="button" class="btn btn-primary" id="updateLogoCancel">취소</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="OverlayWrapper" class="mainCutOverLay">
+        <div id="OverlayContentWrapper">
+            <div class="row">
+                <div class="col-lg-12 col-sm-12">
+                    <form action="#" id="maincutInsertForm" method="post" enctype="multipart/form-data">
+                        <div class="content-top justify-content-center mb-3" style="display: flex;">
+                            <img src="" alt="등록된 사진이 없습니다." style="width: 270px; height: 180px;" id="mainCutImgView">
+                        </div>
+                        <div class="content-mid justify-content-center mb-3" style="display: flex;">
+                            <input type="file" id="mainCutImg" name="mainCutImg" style="width: 100%; max-width: 300px;" accept=".jpg, .jpeg, .png">
+                        </div>
+                        <div class="content-bottom justify-content-center" style="display: flex;">
+                            <button type="button" class="btn btn-primary" id="updateMainCutSubmitBtn">저장</button>
+                            <button type="button" class="btn btn-primary" id="updateMainCutCancel">취소</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="OverlayWrapper" class="mainCut2OverLay">
+        <div id="OverlayContentWrapper">
+            <div class="row">
+                <div class="col-lg-12 col-sm-12">
+                    <form action="#" id="maincut2InsertForm" method="post" enctype="multipart/form-data">
+                        <div class="content-top justify-content-center mb-3" style="display: flex;">
+                            <img src="" alt="등록된 사진이 없습니다." style="width: 270px; height: 180px;" id="mainCut2ImgView">
+                        </div>
+                        <div class="content-mid justify-content-center mb-3" style="display: flex;">
+                            <input type="file" id="mainCut2Img" name="mainCutImg" style="width: 100%; max-width: 300px;" accept=".jpg, .jpeg, .png">
+                        </div>
+                        <div class="content-bottom justify-content-center" style="display: flex;">
+                            <button type="button" class="btn btn-primary" id="updateMainCut2SubmitBtn">저장</button>
+                            <button type="button" class="btn btn-primary" id="updateMainCut2Cancel">취소</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="OverlayWrapper" class="mobileMainCutOverLay">
+        <div id="OverlayContentWrapper">
+            <div class="row">
+                <div class="col-lg-12 col-sm-12">
+                    <form action="#" id="mobileMainCutInsertForm" method="post" enctype="multipart/form-data">
+                        <div class="content-top justify-content-center mb-3" style="display: flex;">
+                            <img src="" alt="등록된 사진이 없습니다." style="width: 270px; height: 180px;" id="mobileMainCutImgView">
+                        </div>
+                        <div class="content-mid justify-content-center mb-3" style="display: flex;">
+                            <input type="file" id="mobileMainCutImg" name="mobileMainCutImg" style="width: 100%; max-width: 300px;" accept=".jpg, .jpeg, .png">
+                        </div>
+                        <div class="content-bottom justify-content-center" style="display: flex;">
+                            <button type="button" class="btn btn-primary" id="updateMobileMainCutSubmitBtn">저장</button>
+                            <button type="button" class="btn btn-primary" id="updateMobileMainCutCancel">취소</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="OverlayWrapper" class="mobileMainCut2OverLay">
+        <div id="OverlayContentWrapper">
+            <div class="row">
+                <div class="col-lg-12 col-sm-12">
+                    <form action="#" id="mobileMainCut2InsertForm" method="post" enctype="multipart/form-data">
+                        <div class="content-top justify-content-center mb-3" style="display: flex;">
+                            <img src="" alt="등록된 사진이 없습니다." style="width: 270px; height: 180px;" id="mobileMainCut2ImgView">
+                        </div>
+                        <div class="content-mid justify-content-center mb-3" style="display: flex;">
+                            <input type="file" id="mobileMainCut2Img" name="mobileMainCutImg" style="width: 100%; max-width: 300px;" accept=".jpg, .jpeg, .png">
+                        </div>
+                        <div class="content-bottom justify-content-center" style="display: flex;">
+                            <button type="button" class="btn btn-primary" id="updateMobileMainCut2SubmitBtn">저장</button>
+                            <button type="button" class="btn btn-primary" id="updateMobileMainCut2Cancel">취소</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- '등록' 오버레이 부분 끝-->
+
+    <!-- Navbar -->
+    <div id="includeHTML" include-html="navbar.html"></div>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="includeHTML" include-html="sidebar.html"></div>
+
+        <div id="content-wrapper">
+
+            <div class="container-fluid">
+                <div id="Font-wrapper">
+                    ● 폰트 변경
+                    <div>
+                        <div class="row">
+                            <div class="card col-lg-4 col-sm-4 mb-1" id="currFontExample">
+                                <div style="margin: 1rem">
+                                    <p>현재 폰트 : <span id="currFontTitle"></span></p>
+                                    <p>0 1 2 3 4 5 6 7 8 9</p>
+                                    <p>가나다라마바사아자차카타파하</p>
+                                    <p>abcdefghijklmnopqrstuvwxyz</p>
+                                    <p>ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+                                </div>
+                            </div>
+                            <div class="card col-lg-4 col-sm-4 mb-1" id="selectedFontExample">
+                                <div style="margin: 1rem">
+                                    <p>선택 폰트 : <span id="selectedFontTitle"></span></p>
+                                    <p>0 1 2 3 4 5 6 7 8 9</p>
+                                    <p>가나다라마바사아자차카타파하</p>
+                                    <p>abcdefghijklmnopqrstuvwxyz</p>
+                                    <p>ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <select name="fonts" id="selectFont">
+                        <option value='' selected>현재 폰트</option>
+                        <option value='#'>폰트 A</option>
+                        <option value='#'>폰트 B</option>
+                        <option value='#'>폰트 C</option>
+                    </select>
+                    <button type="button" class="btn btn-primary" id="updateFontSubmitBtn">적용하기</button>
+                    <br><br>
+                    <button id="insertFontBtn" class="btn btn-primary">폰트업로드</button>
+                </div>
+                <br><br>
+
+                <div id="Logo-wrapper">
+                    ● 로고 변경
+                    <br><br>
+                    <img src="../src/logo/honorlogo.jpg" alt="등록된 로고가 없습니다." style="width: 150px; height: 150px;" id="currlogoImgView" style="display: flex;">
+                    <br><br>
+                    <button id="updateLogoBtn" class="btn btn-primary">로고변경하기</button>
+                </div>
+                <br><br>
+
+                <div id="BackgroundImg-wrapper">
+                    ● 메인 사진 변경
+                    <div class="row">
+                        <div class="col-lg-6 mb-2">
+                            - 메인 사진 1
+                            <br>
+                            <img src="../src/maincut/maincut.jpg" alt="등록된 메인컷이 없습니다." style="width: 450px; height: auto;" id="currMaincutImgView" style="display: flex;">
+                            <br><br>
+                            <button id="updateMainCutBtn" class="btn btn-primary">메인사진1 변경하기</button>
+                        </div>
+
+                        <div class="col-lg-6 mb-2">
+                            - 메인 사진 2
+                            <br>
+                            <img src="../src/maincut/maincut2.jpg" alt="등록된 메인컷이 없습니다." style="width: 450px; height: auto;" id="currMaincut2ImgView" style="display: flex;">
+                            <br><br>
+                            <button id="updateMainCut2Btn" class="btn btn-primary">메인사진2 변경하기</button>
+                        </div>
+                    </div>
+                </div>
+                <br><br>
+
+                <div id="BackgroundImg-wrapper">
+                    ● 모바일용 메인 사진 변경
+                    <div class="row">
+                        <div class="col-lg-6 mb-2">
+                            - 모바일 메인 사진 1
+                            <br>
+                            <img src="../src/maincut/maincut_m_man.jpg" alt="등록된 메인컷이 없습니다." style="width: 350px; height: auto;" id="currMainCutMImgView" style="display: flex;">
+                            <br><br>
+                            <button id="updateMobileMainCutBtn" class="btn btn-primary">모바일메인사진1 변경하기</button>
+                        </div>
+
+                        <div class="col-lg-6 mb-2">
+                            - 모바일 메인 사진 2
+                            <br>
+                            <img src="../src/maincut/maincut_m_woman.jpg" alt="등록된 메인컷이 없습니다." style="width: 350px; height: auto;" id="currMainCut2MImgView" style="display: flex;">
+                            <br><br>
+                            <button id="updateMobileMainCut2Btn" class="btn btn-primary">모바일메인사진2 변경하기</button>
+                        </div>
+                    </div>
+                </div>
+                <br><br>
+
+                <div id="BackgroundImg-wrapper">
+                    ● 입금 안내 문구 변경
+                    <br><br>
+                    <textarea id="Tinymce"></textarea>
+                    <button id="updatePayGuideMessageBtn" class="btn btn-primary mt-3">안내문구변경하기</button>
+                    <br><br>
+                </div>
+                <br><br>
+            </div>
+        </div>
+    </div>
+    <!-- /.content-wrapper -->
+    <!-- /#wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div id="includeHTML" include-html="logoutModal.html"></div>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/ADMIN_vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/ADMIN_vendor/jquery/jquery.form.min.js"></script>
+
+    <script>
+        includeHTML();
+
+    </script>
+    <!-- Custom scripts for all pages-->
+    <script src="js/ADMIN_js/sb-admin.min.js"></script>
+
+    <script src="js/ADMIN_js/Settings.js"></script>
+
+
+    <!-- Load Tinymce (Editor) -->
+    <script src="tinymce/js/tinymce/tinymce.min.js"></script>
+    <script>
+        // Tinymce Load
+        tinymce.init({
+            selector: '#Tinymce',
+            height: 400,
+            language: 'ko_KR',
+        });
+
+    </script>
+
+</body>
+
+</html>
